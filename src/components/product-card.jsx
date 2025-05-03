@@ -8,8 +8,8 @@ export default function ProductCard({ product }) {
       <Link href={`/productos/${product.id}`}>
         <div className="relative h-64 overflow-hidden">
           <Image
-            src={product.image || "/placeholder.svg?height=256&width=256"}
-            alt={product.title}
+            src={`https://filtros.digitaltelecom.online/api/products/${product.image}`|| "/file.svg?height=256&width=256"}
+            alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
         <Link href={`/productos/${product.id}`}>
           <h3 className="font-semibold mb-1 hover:text-green-600 transition-colors">{product.title}</h3>
         </Link>
-        <p className="text-gray-600 text-sm mb-2">{product.category}</p>
+        <p className="text-gray-600 text-sm mb-2">{product.category.name}</p>
         <div className="flex justify-between items-center">
           <span className="font-bold">${product.price.toFixed(2)}</span>
           <AddToCartButton product={product} compact />

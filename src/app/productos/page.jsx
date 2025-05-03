@@ -5,7 +5,7 @@ export default async function ProductsPage() {
   let products = [];
 
   try {
-    const response = await axios.get("https://fakestoreapi.com/products");
+    const response = await axios.get("https://filtros.digitaltelecom.online/api/products");
 
     if (response.data) {
       products = response.data;
